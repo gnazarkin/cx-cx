@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :experiences do
+    resources :comments
+  end
+
+  resources :user_sessions, :only => [:new, :create, :destroy]
+  resources :users, :only => [:new, :create, :show] do
+    resources :comments
+  end
+
+  root to: "welcome#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
