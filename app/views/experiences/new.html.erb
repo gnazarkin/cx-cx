@@ -1,2 +1,12 @@
-<h1>Experiences#new</h1>
-<p>Find me in app/views/experiences/new.html.erb</p>
+<h1>New Experience</h1>
+
+<%= form_for(@experience) do |f| %>
+
+	<%= f.text_field :name, placeholder: "Name" %>
+	<%= f.text_area :description, placeholder: "Experience Description" %>
+	<%= f.number_field :price, placeholder: "Price" %>
+	<%= f.date_field :start_time %>
+	<%= f.date_field :end_time %>
+	<%= f.submit 'Submit' %>
+
+<% end %>

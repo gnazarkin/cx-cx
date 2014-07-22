@@ -13,6 +13,12 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(experience_params)
+
+    if @experience.save
+      redirect_to experiences_path, notice: "Experience created successfully"
+    else
+      render :new
+    end 
   end
 
   def update
@@ -25,6 +31,7 @@ class ExperiencesController < ApplicationController
   end
 
   private
-  def params.require(:expreience).permit(:name, :description, :start_time, :end_time, :price)  
+  def experience_params
+    params.require(:experience).permit(:name, :description, :start_time, :end_time, :price)  
   end
 end
