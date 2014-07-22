@@ -9,10 +9,12 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = Experience.find(params[:id])
+    @user = @experience.user
   end
 
   def create
     @experience = Experience.new(experience_params)
+    @experience.user_id = current_user.id
 
     if @experience.save
       redirect_to experiences_path, notice: "Experience created successfully"

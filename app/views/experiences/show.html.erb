@@ -1,2 +1,6 @@
-<h1>Experiences#show</h1>
-<p>Find me in app/views/experiences/show.html.erb</p>
+<h1><%= @experience.name %></h1>
+<p><%= @experience.user.first_name %> <%= @experience.user.last_name %></p>
+<p>Description: <%= @experience.description %></p>
+<p>Price: <%= number_to_currency(@experience.price) %>
+
+
