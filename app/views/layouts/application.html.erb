@@ -14,8 +14,9 @@
   <div id="nav">
     <%= link_to "Experiences", experiences_path %> |
     <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %> |
+      <%= link_to "Logout", :logout, method: :post %> |
+      <%= link_to "New Experience", new_experience_path %>
     <% else %>
       <%= link_to "Register", new_user_path %> |
       <%= link_to "Login", :login %>
@@ -26,7 +27,7 @@
     <p id="alert"><%= flash[:alert] %></p>
   </div>
   <%= yield %>
-  
+
   <%= javascript_include_tag "application" %>
   </body>
 </html>

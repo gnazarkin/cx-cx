@@ -1,2 +1,9 @@
-<h1>Experiences#index</h1>
-<p>Find me in app/views/experiences/index.html.erb</p>
+<h1>Experiences</h1>
+
+<% @experiences.each do |e| %>
+	<h4><%= link_to e.name, experience_path(e.id) %></h4>
+	<p><%= e.description %> - <%= number_to_currency(e.price)%> </p>
+	<p><%= e.start_time %> - <%= e.end_time %></p>
+
+<% end %>
+
