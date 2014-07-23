@@ -1,4 +1,6 @@
 class ExperiencesController < ApplicationController
+    before_filter :require_login, :only => [:new, :edit, :update, :destroy, :create]
+  
   def index
     @experiences = Experience.all
   end
@@ -10,6 +12,8 @@ class ExperiencesController < ApplicationController
   def show
     @experience = Experience.find(params[:id])
     @user = @experience.user
+    @commentable = find_commentable
+    @comments = @experience.comments
   end
 
   def create
@@ -35,5 +39,14 @@ class ExperiencesController < ApplicationController
   private
   def experience_params
     params.require(:experience).permit(:name, :description, :start_time, :end_time, :price)  
+  end
+
+  def find_commentable
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+        return $1.classify.constantize.find(value)
+      end
+    end
+    nil
   end
 end

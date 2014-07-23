@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   authenticates_with_sorcery!
 
   validates :password, length: { minimum: 8 }
@@ -11,5 +12,7 @@ class User < ActiveRecord::Base
 
 
   has_many :experiences
+
+  has_many :comments, :as => :commentable
 end
 

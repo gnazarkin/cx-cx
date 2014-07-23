@@ -46,6 +46,8 @@ gem 'rmagick', :require => 'RMagick'
 
 gem 'acts_as_commentable'
 
+gem 'act'
+
 gem 'geocoder'
 
 # Use ActiveModel has_secure_password
