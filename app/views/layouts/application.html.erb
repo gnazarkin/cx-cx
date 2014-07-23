@@ -14,7 +14,7 @@
   <div id="nav">
     <%= link_to "Experiences", experiences_path %> |
     <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %> |   
+      <%= link_to "My Profile", user_path(current_user.id) %> |
       <%= link_to "New Experience", new_experience_path %> |
       <%= link_to "Logout", :logout, method: :post %> |
     <% else %>
