@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   end
 
   resources :user_sessions, :only => [:new, :create, :destroy]
-  resources :users, :only => [:new, :create, :show, :edit] do
+  resources :users
+  resources :users, :only => [:show] do
     resources :comments
   end
 
