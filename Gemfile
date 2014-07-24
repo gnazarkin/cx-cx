@@ -44,11 +44,13 @@ gem 'carrierwave'
 
 gem 'rmagick', :require => 'RMagick'
 
-gem 'acts_as_commentable'
-
 gem 'act'
 
 gem 'geocoder'
+
+gem 'binding_of_caller'
+
+gem 'quiet_assets', :group => :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

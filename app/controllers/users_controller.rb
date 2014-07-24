@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @comments = @user.comments
   end 
 
   def edit
@@ -36,5 +37,14 @@ class UsersController < ApplicationController
   private
   def user_params
   	params.require(:user).permit(:first_name, :last_name, :bio, :email, :password, :password_confirmation)
+  end
+
+  def find_commentable
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+        return $1.classify.constantize.find(value)
+      end
+    end
+    nil
   end
 end

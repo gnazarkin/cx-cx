@@ -12,7 +12,13 @@ class User < ActiveRecord::Base
 
 
   has_many :experiences
-
   has_many :comments, :as => :commentable
+  has_many :authored_comments, :class_name => "Comment", :foreign_key => "author_id"
+
+  def full_name
+  	"#{first_name} #{last_name}"
+  end
+
+
 end
 

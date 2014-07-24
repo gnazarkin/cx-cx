@@ -1,9 +1,7 @@
 <h1>Experiences</h1>
 
-<% @experiences.each do |e| %>
-	<h4><%= link_to e.name, experience_path(e.id) %></h4>
-	<p><%= e.description %> - <%= number_to_currency(e.price)%> </p>
-	<p><%= e.start_time %> - <%= e.end_time %></p>
+<div class="experience">
+	<%= render 'experience' %>
+</div>
 
-<% end %>
 
