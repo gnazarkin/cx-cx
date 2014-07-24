@@ -1,5 +1,16 @@
 <% @experiences.each do |e| %>
-	<h4><%= link_to e.name, experience_path(e.id) %> - <%= e.user.full_name %></h4>
-	<p><%= e.description %> - <%= number_to_currency(e.price)%> </p>
-	<p><%= e.start_time %> - <%= e.end_time %></p>
+	<div class="row">
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <div class="caption">
+	        <div class="experience">
+						<h3><%= link_to e.name, experience_path(e.id) %> - <%= e.user.full_name %></h3>
+						<p><%= e.description %> - <%= number_to_currency(e.price)%> </p>
+						<p><%= e.start_time %> - <%= e.end_time %></p>					</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
 <% end %>
+
