@@ -1,17 +1,43 @@
-<%= form_for(@user) do |f| %>
+<%= form_for @user, class 'form-horizontal' do |f| %>
 		
-		<%= f.text_field :first_name, placeholder: "First Name"  %>
+	<div class="field form-group">
+		</div class="col-sm-6">
+			<%= f.text_field :first_name, placeholder: "First Name"  %>
+			</div>
+		</div>
 
-		<%= f.text_field :last_name, placeholder: "Last Name"  %>
+	<div class="field form-group">
+		</div class="col-sm-6">
+			<%= f.text_field :last_name, placeholder: "Last Name"  %>
+			</div>
+		</div>
 
-		<%= f.text_field :email, placeholder: "Email"  %>
+	<div class="field form-group">
+		</div class="col-sm-6">
+			<%= f.text_field :email, placeholder: "Email"  %>
+			</div>
+		</div>
 
-    <%= f.text_area :bio, placeholder: "Bio" %>
+	<div class="field form-group">
+		</div class="col-sm-6">
+    	<%= f.text_area :bio, placeholder: "Bio" %>
+   	 </div>
+		</div>
 
-		<%= f.password_field :password, placeholder: "Password"  %>
+	<div class="field form-group">
+		</div class="col-sm-6">
+			<%= f.password_field :password, placeholder: "Password"  %>
+		</div>
+	</div>
 
-		<%= f.password_field :password_confirmation, placeholder: "Password Confirmation"  %>
+	<div class="field form-group">
+		</div class="col-sm-6">
+			<%= f.password_field :password_confirmation, placeholder: "Password Confirmation"  %>
+		</div>
+	</div>
 
-		<%= f.submit 'Submit' %>
+		<%= f.submit 'Submit', class: "btn btn-default" %>
 
 <% end %>
+
+	

@@ -1,0 +1,37 @@
+<%= form_for @experience, class: 'form-horizontal' do |f| %>
+
+	<div class="field form-group">
+		</div class="col-sm-6">
+			<%= f.text_field :name, placeholder: "Name" %>
+		</div>
+	</div>
+
+	<div class="field form-group">
+		</div class="col-sm-6">
+		<%= f.text_area :description, placeholder: "Experience Description" %>
+		</div>
+	</div>
+
+	<div class="field form-group">
+		</div class="col-sm-6">
+		<%= f.number_field :price, placeholder: "Price" %>
+		</div>
+	</div>
+
+	<div class="field form-group">
+		</div class="col-sm-6">
+		<%= f.datetime_select :start_time %>
+		</div>
+	</div>
+
+	<div class="field form-group">
+		</div class="col-sm-6">
+		<%= f.datetime_select :end_time %>
+		</div>
+	</div>
+
+	<div class="field form-group">
+	<%= f.submit 'Submit', class: "btn btn-default" %>
+	</div>
+
+<% end %>

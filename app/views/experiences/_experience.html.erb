@@ -1,16 +1,13 @@
-<% @experiences.each do |e| %>
+
 	<div class="row">
 	  <div class="col-sm-6 col-md-4">
 	    <div class="thumbnail">
 	      <div class="caption">
 	        <div class="experience">
-						<h3><%= link_to e.name, experience_path(e.id) %> - <%= e.user.full_name %></h3>
-						<p><%= e.description %> - <%= number_to_currency(e.price)%> </p>
-						<p><%= e.start_time %> - <%= e.end_time %></p>					</div>
+						<h3><%= link_to experience.name, experience_path(experience.id) %> - <%= experience.user.full_name %></h3>
+						<p><%= experience.description %> - <%= number_to_currency(experience.price)%> </p>
+						<p><%= experience.start_time %> - <%= experience.end_time %></p>					</div>
 	      </div>
 	    </div>
 	  </div>
 	</div>
-	
-<% end %>
-

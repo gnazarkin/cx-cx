@@ -50,6 +50,8 @@ gem 'quiet_assets', :group => :development
 
 gem 'bootstrap-sass', '~> 3.2.0'
 
+gem 'carrierwave'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
