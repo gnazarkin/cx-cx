@@ -9,8 +9,8 @@ class ExperiencesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html
       format.js
+      format.html
     end
   end
 

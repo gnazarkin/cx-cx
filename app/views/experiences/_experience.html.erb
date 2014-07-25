@@ -6,7 +6,11 @@
 	        <div class="experience">
 						<h3><%= link_to experience.name, experience_path(experience.id) %> - <%= experience.user.full_name %></h3>
 						<p><%= experience.description %> - <%= number_to_currency(experience.price)%> </p>
-						<p><%= experience.start_time %> - <%= experience.end_time %></p>					</div>
+						<p><%= experience.start_time %> - <%= experience.end_time %></p>	
+						<% if(current_user.id == experience.user_id) %>
+							<p><%= link_to "Edit Experience", edit_experience_path %></p>
+						<% end %>				
+					</div>
 	      </div>
 	    </div>
 	  </div>
