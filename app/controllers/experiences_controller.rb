@@ -5,21 +5,17 @@ class ExperiencesController < ApplicationController
     if params[:search]
       @experiences = Experience.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")
     else 
-      @experiences = Experience.order("created_at DESC")
+      @experiences = Experience.order("experiences.created_at DESC").page(params[:page])
     end
 
-    # respond_to do |format|
-    #   format.html
-    #   format.js
-    # end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
     @experience = Experience.new
-  end
-
-  def search
-    
   end
 
   def show

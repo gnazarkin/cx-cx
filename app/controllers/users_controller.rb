@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
     @comments = @user.comments
-    @experiences = @user.experiences
+    @experiences = @user.experiences.order("experiences.created_at DESC").page(params[:page])
   end 
 
   def edit
