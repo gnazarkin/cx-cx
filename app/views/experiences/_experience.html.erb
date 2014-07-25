@@ -8,7 +8,7 @@
 						<p><%= experience.description %> - <%= number_to_currency(experience.price)%> </p>
 						<p><%= experience.start_time %> - <%= experience.end_time %></p>	
 						<% if(current_user.id == experience.user_id) %>
-							<p><%= link_to "Edit Experience", edit_experience_path %></p>
+							<p><%= link_to "Edit Experience", edit_experience_path(experience.id) %></p>
 						<% end %>				
 					</div>
 	      </div>
